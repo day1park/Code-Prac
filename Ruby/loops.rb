@@ -33,3 +33,29 @@ end
 for num in 1...10
     puts num
 end
+
+for num in 1..20
+  puts num
+end
+
+
+i = 0
+loop do
+  i += 1
+  print "#{i}"
+  break if i > 5
+end
+
+i = 20
+loop do
+  i -= 1
+  print "#{i}"
+  break if i <= 0
+end
+
+i = 20
+loop do
+  i -= 1
+  puts "#{i}"
+  break if i <= 0
+end
