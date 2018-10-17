@@ -104,3 +104,113 @@ def prime(n)
   puts by_three?(296) # false
   #if there's nothing remaing when divided by 3 then it is divisible by 3
 
+
+  # Blocks Are Like Nameless Methods
+  # Blocks can be defined with either the keywords do and end or with curly braces ({}).
+  1.times do
+    puts "I'm a code block!"
+  end
+  
+  1.times { puts "As am I!" }
+
+
+  # method that capitalizes a word
+def capitalize(string) 
+  puts "#{string[0].upcase}#{string[1..-1]}"
+end
+
+capitalize("ryan") # prints "Ryan"
+capitalize("jane") # prints "Jane"
+
+# block that capitalizes each string in the array
+["ryan", "jane"].each {|string| puts "#{string[0].upcase}#{string[1..-1]}"} # prints "Ryan", then "Jane"
+
+my_array = [3, 4, 8, 7, 1, 6, 5, 9, 2]
+
+# Call the sort! method on my_array below.
+# my_array should then equal [1, 2, 3, 4, 5, 6, 7, 8, 9].
+
+
+# The block, {|i| puts i}, is passed the current
+# array item each time it is evaluated. This block
+# prints the item. 
+[1, 2, 3, 4, 5].each { |i| puts i }
+
+# This block prints the number 5 for each item.
+# (It chooses to ignore the passed item, which is allowed.)
+[1, 2, 3, 4, 5].each { |i| puts 5 * i }
+
+sorted = my_array.sort!
+sorted.each do |i| 
+  puts i
+end
+
+
+# library sorting code
+books = ["Charlie and the Chocolate Factory", "War and Peace", "Utopia", "A Brief History of Time", "A Wrinkle in Time"]
+
+# How might we sort! the books in alphabetical order? (Hint, hint)
+
+books.sort!
+
+books.each { |b| puts b }
+
+books.each do |b|
+  puts b
+end
+
+# 2 different ways to do blocks
+
+
+
+#  Combined Comparison Operator <=>
+
+# returns 0 if the first operand (item to be compared) equals the second, 1 if the first operand is greater than the second, and -1 if the first operand is less than the second.
+
+book_1 = "A Wrinkle in Time"
+
+book_2 = "A Brief History of Time"
+
+print book_2 <=> book_1    # = -1
+print book_1 <=> book_2    # = 1
+print book_2 <=> book_2    # = 0
+print book_1 <=> book_1    # = 0
+
+# The sort method assumes by default that you want to sort in ascending order
+
+books = ["Charlie and the Chocolate Factory", "War and Peace", "Utopia", "A Brief History of Time", "A Wrinkle in Time"]
+
+# To sort our books in ascending order, in-place
+books.sort! { |firstBook, secondBook| firstBook <=> secondBook }
+
+# Sort your books in descending order, in-place below
+
+books.sort! {|firstBook, secondBook| secondBook <=> firstBook }
+
+puts books
+
+# descending order
+
+
+numbers = [5, 2, 8]
+sum = 0
+numbers.each do |n|
+  sum += n
+end
+puts sum
+
+
+my_array = [1, 2, 3, 4, 5]
+
+my_array.each do |n|
+  puts n*n
+end
+
+
+fruits = ["orange", "apple", "banana", "pear", "grapes"]
+
+fruits.sort! do |fruit1, fruit2|
+  fruit2 <=> fruit1
+end
+
+puts fruits
