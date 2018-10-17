@@ -40,4 +40,67 @@ def prime(n)
 
   # to_a to array
 
+  # if no method found by the name called, it will return NameError
+  def array_of_10
+    puts (1..10).to_a
+  end
   
+  array_of_10  # <---- calling the method
+
+  # Parameters and Arguments
+
+  def cubertino(n)
+    puts n ** 3
+  end
+  
+  cubertino(8)
+
+  # Splat!
+
+  def what_up(greeting, *friends)
+    friends.each { |friend| puts "#{greeting}, #{friend}!" }
+  end
+  
+  what_up("What up", "Ian", "Zoe", "Zenas", "Eleanor")
+
+  
+  # messing with the argument order
+  def what_up(greeting, *friends)
+    friends.each { |friend| puts "#{greeting}, #{friend}!" }
+  end
+  
+  what_up("Ian", "hello", "Zoe", "Zenas", "Eleanor")
+
+  # will return Ian, "all other arguments after Ian"
+
+
+  # RETURN
+
+  def double(n)
+    return n * 2
+  end
+  
+  output = double(6)
+  output += 2
+  puts output
+
+
+
+  def by_five?(n)
+    return n % 5 == 0
+  end
+
+
+  def greeter(name)
+    return "hello #{name}"
+  end
+  
+  puts greeter("jasmine")
+  
+  def by_three?(number)
+    return number % 3 == 0
+  end
+  
+  puts by_three?(296) # false
+  #if there's nothing remaing when divided by 3 then it is divisible by 3
+
