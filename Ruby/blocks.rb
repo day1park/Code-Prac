@@ -28,3 +28,16 @@ def prime(n)
   prime(11)
   prime(51)
   prime(97)
+
+  # Methods are defined using the keyword def (short for "define").
+
+  # method example
+
+  def welcome
+    puts "Welcome to Ruby!"
+  end
+
+
+  # to_a to array
+
+  
