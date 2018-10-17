@@ -100,3 +100,26 @@ symbol_hash = {
     :string => "cat",    # Fill in these two blanks!
     :boolean => false,
   }
+
+  :sasquatch.to_s
+# ==> "sasquatch"
+
+"sasquatch".to_sym
+# ==> :sasquatch
+
+
+strings = ["HTML", "CSS", "JavaScript", "Python", "Ruby"]
+
+# Add your code below!
+
+symbols = []
+
+strings.each do |s|
+  symbols.push(s.to_sym)
+end
+
+print symbols 
+
+symbols.each do |x|
+  puts x
+end
