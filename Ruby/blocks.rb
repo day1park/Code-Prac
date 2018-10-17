@@ -190,3 +190,27 @@ books.sort! {|firstBook, secondBook| secondBook <=> firstBook }
 puts books
 
 # descending order
+
+
+numbers = [5, 2, 8]
+sum = 0
+numbers.each do |n|
+  sum += n
+end
+puts sum
+
+
+my_array = [1, 2, 3, 4, 5]
+
+my_array.each do |n|
+  puts n*n
+end
+
+
+fruits = ["orange", "apple", "banana", "pear", "grapes"]
+
+fruits.sort! do |fruit1, fruit2|
+  fruit2 <=> fruit1
+end
+
+puts fruits
