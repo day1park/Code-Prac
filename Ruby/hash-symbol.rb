@@ -66,3 +66,37 @@ menagerie = { :foxes => 2,
     :canaries => 4,
     :ham => 1
   }
+
+#   symbols aren't strings:
+"string" == :string # false
+
+# The .object_id method gets the ID of an object—it's how Ruby knows whether two objects are the exact same object. 
+#  two "strings" are actually different objects, whereas the :symbol is the same object listed twice.
+puts "string".object_id
+puts "string".object_id
+
+puts :symbol.object_id
+puts :symbol.object_id
+
+# symbol syntax
+# Symbols always start with a colon (:). 
+# They must be valid Ruby variable names, so the first character after the colon has to be a letter or underscore (_); after that, any combination of letters, numbers, and underscores is allowed.
+
+my_first_symbol = :my_sym, :_true, :no_integer_first1
+
+sounds = {
+    :cat => "meow",
+    :dog => "woof",
+    :computer => 10010110,
+  }
+#   primarily used either as hash keys or for referencing method names. 
+
+# They're immutable, meaning they can't be changed once they're created;
+# Only one copy of any symbol exists at a given time, so they save memory;
+# Symbol-as-keys are faster than strings-as-keys because of the above two reasons.
+
+symbol_hash = {
+    :one => 1,
+    :string => "cat",    # Fill in these two blanks!
+    :boolean => false,
+  }
