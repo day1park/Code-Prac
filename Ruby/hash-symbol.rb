@@ -123,3 +123,21 @@ print symbols
 symbols.each do |x|
   puts x
 end
+
+
+# .intern works same as .to_sym
+
+"hello".intern
+# ==> :hello
+
+strings.each do |s|
+    symbols.push(s.intern)
+  end
+
+
+  movies = {
+    :batman => "meh ok for DC",
+    :spider_man => "my hero"
+    }
+  
+  puts movies[:batman]
