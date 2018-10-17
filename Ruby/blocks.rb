@@ -144,3 +144,49 @@ sorted = my_array.sort!
 sorted.each do |i| 
   puts i
 end
+
+
+# library sorting code
+books = ["Charlie and the Chocolate Factory", "War and Peace", "Utopia", "A Brief History of Time", "A Wrinkle in Time"]
+
+# How might we sort! the books in alphabetical order? (Hint, hint)
+
+books.sort!
+
+books.each { |b| puts b }
+
+books.each do |b|
+  puts b
+end
+
+# 2 different ways to do blocks
+
+
+
+#  Combined Comparison Operator <=>
+
+# returns 0 if the first operand (item to be compared) equals the second, 1 if the first operand is greater than the second, and -1 if the first operand is less than the second.
+
+book_1 = "A Wrinkle in Time"
+
+book_2 = "A Brief History of Time"
+
+print book_2 <=> book_1    # = -1
+print book_1 <=> book_2    # = 1
+print book_2 <=> book_2    # = 0
+print book_1 <=> book_1    # = 0
+
+# The sort method assumes by default that you want to sort in ascending order
+
+books = ["Charlie and the Chocolate Factory", "War and Peace", "Utopia", "A Brief History of Time", "A Wrinkle in Time"]
+
+# To sort our books in ascending order, in-place
+books.sort! { |firstBook, secondBook| firstBook <=> secondBook }
+
+# Sort your books in descending order, in-place below
+
+books.sort! {|firstBook, secondBook| secondBook <=> firstBook }
+
+puts books
+
+# descending order
