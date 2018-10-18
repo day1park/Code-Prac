@@ -64,3 +64,10 @@ puts favorite_book
 favorite_book = "Why's (Poignant) Guide to Ruby"
 puts favorite_book
 #not a conditional so prints new book
+
+
+# Ruby's methods will return the result of the last evaluated expression
+
+def multiple_of_three(n)
+    n % 3 == 0 ? "True" : "False"
+  end
