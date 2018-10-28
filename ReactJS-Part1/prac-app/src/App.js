@@ -4,6 +4,12 @@ import "./App.css";
 
 class App extends Component {
   render() {
+    const strings = ["Test1", "Test2", "Testy 3"];
+
+    const listItems = strings.map((string, i) => (
+      <li key={"string_" + i}>{string}</li>
+    ));
+    console.log(listItems);
     return (
       <div className="App">
         <header className="App-header">
@@ -17,6 +23,7 @@ class App extends Component {
           >
             Learn React
           </a>
+          <ul>{listItems}</ul>;
         </header>
       </div>
     );
