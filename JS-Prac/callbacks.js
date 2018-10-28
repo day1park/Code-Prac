@@ -9,6 +9,12 @@ const posts = [
     }
 ];
 
+function createPost(post) {
+    setTimeout(() => {
+        posts.push(post);
+    }, 2000);
+}
+
 function getPosts() {
     setTimeout(() => {
         let output = '';
@@ -19,12 +25,6 @@ function getPosts() {
     }, 1000)
 }
 
-function createPost(post) {
-    setTimeout(() => {
-        posts.push(post);
-    }, 2000);
-
-}
 
 getPosts();
 
