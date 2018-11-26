@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./App.css";
 import Header from "./header";
 import Table from "./table";
+import Search from "./search/search";
 
 const API = "https://hiring-task-api.herokuapp.com/v1/leases/:id";
 
@@ -26,8 +27,8 @@ class App extends Component {
     return (
       <div>
         <Header />
-        {/* <Search /> */}
-        {/* </Table> */}
+        <Search />
+        <Table />
       </div>
     );
   }

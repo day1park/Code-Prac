@@ -1,10 +1,18 @@
 import React from "react";
+import Row from "./row";
 
 const Table = () => {
   return (
-    <div className="Table">
-      <table />
-    </div>
+    <table className="Table">
+      <thead>
+        <tr>
+          <th />
+        </tr>
+      </thead>
+      <tbody>
+        <Row />
+      </tbody>
+    </table>
   );
 };
 
