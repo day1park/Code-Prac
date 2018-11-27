@@ -17,8 +17,8 @@ class App extends Component {
   componentDidMount() {
     fetch(API)
       .then(response => response.json())
-      .then(data => {
-        this.setState({ data });
+      .then(l => {
+        this.setState({ data: l });
       });
   }
   render() {
@@ -28,7 +28,7 @@ class App extends Component {
       <div>
         <Header />
         <Search />
-        <Table />
+        <Table lease={this.state.data} />
       </div>
     );
   }
