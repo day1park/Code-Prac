@@ -55,6 +55,19 @@ class App extends Component {
     this.setState({
       gymExercises: [...newGymExercises]
     });
+
+    if (newGymExercises.length === 0) {
+      this.setState({
+        message: "no exercises on your gym log, lets get active!"
+      });
+    }
+  }
+
+  removeAllExercises() {
+    this.setState({
+      gymExercises: [],
+      message: "all exercises have been removed!"
+    });
   }
 
   render() {
@@ -91,36 +104,55 @@ class App extends Component {
           </form>
         </header>
         <div className="content">
-          {message !== "" && <p className="message text-danger">{message}</p>}
-          <table className="table">
-            <caption>Gym Exerecises</caption>
-            <thead>
-              <tr>
-                <th>#</th>
-                <th>Exercise</th>
-                <th>action</th>
-              </tr>
-            </thead>
-            <tbody>
-              {gymExercises.map(exercise => {
-                return (
-                  <tr key={exercise}>
-                    <th scope="row">1</th>
-                    <td>{exercise}</td>
-                    <td className="text-right">
-                      <button
-                        onClick={e => this.removeExercise(exercise)}
-                        type="button"
-                        className="btn btn-danger btn-sm"
-                      >
-                        Remove
-                      </button>
-                    </td>
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
+          {(message !== "" || gymExercises.length === 0) && (
+            <p className="message text-danger">
+              <h1>{message}</h1>
+            </p>
+          )}
+          {gymExercises.length > 0 && (
+            <table className="table">
+              <caption>Gym Exerecises</caption>
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Exercise</th>
+                  <th>action</th>
+                </tr>
+              </thead>
+              <tbody>
+                {gymExercises.map(exercise => {
+                  return (
+                    <tr key={exercise}>
+                      <th scope="row">1</th>
+                      <td>{exercise}</td>
+                      <td className="text-right">
+                        <button
+                          onClick={e => this.removeExercise(exercise)}
+                          type="button"
+                          className="btn btn-danger btn-sm"
+                        >
+                          Remove
+                        </button>
+                      </td>
+                    </tr>
+                  );
+                })}
+              </tbody>
+              <tfoot>
+                <tr>
+                  <td colSpan="2">&nbsp;</td>
+                  <td className="text-right">
+                    <button
+                      onClick={e => this.removeAllExercises()}
+                      className="btn btn-success btn-sm"
+                    >
+                      clear list
+                    </button>
+                  </td>
+                </tr>
+              </tfoot>
+            </table>
+          )}
         </div>
       </div>
     );
