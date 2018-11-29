@@ -17,17 +17,32 @@ const Greeting = props => {
 };
 
 class App extends Component {
+  constructor(props) {
+    // supoer is a keyword used to call functions on an objects parent
+    super(props);
+    this.state = {
+      gymExercises: ["chest", "legs", "back"]
+    };
+  }
   render() {
+    const { gymExercises } = this.state;
     return (
       <div className="App">
-        <header className="App-header">
-          <Header />
-          <img src={logo} className="App-logo" alt="logo" />
-          <Greeting name="DJ Khaled" age={1000} />
-        </header>
+        <Header />
+        <img src={logo} className="App-logo" alt="logo" />
+        <Greeting name="DJ Khaled" age={1000} />
+        <h1>gym log</h1>
+        {gymExercises.map(item => {
+          return <p key={item}>{item}</p>;
+        })}
       </div>
     );
   }
 }
 
 export default App;
+
+// Greeting.propTypes = {
+//   name: React.PropTypes.string,
+//   age: React.PropTypes.number
+// };
