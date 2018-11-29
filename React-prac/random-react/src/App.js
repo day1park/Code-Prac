@@ -18,12 +18,26 @@ const Greeting = props => {
 
 class App extends Component {
   constructor(props) {
-    // supoer is a keyword used to call functions on an objects parent
+    // super is a keyword used to call functions on an objects parent
     super(props);
     this.state = {
-      gymExercises: ["chest", "legs", "back"]
+      gymExercises: ["chest", "legs", "back"],
+      message: ""
     };
   }
+
+  addExercise(e) {
+    e.preventDefault();
+    const { gymExercises } = this.state;
+    const newExercise = this.newExercise.value;
+    newExercise !== "" &&
+      this.setState({
+        gymExercises: [...gymExercises, newExercise]
+      });
+
+    this.addForm.reset();
+  }
+
   render() {
     const { gymExercises } = this.state;
     return (
@@ -31,42 +45,55 @@ class App extends Component {
         <Header />
         <img src={logo} className="App-logo" alt="logo" />
         <Greeting name="DJ Khaled" age={1000} />
-        <h1>gym log</h1>
-        <form className="form-inline">
-          <div className="form-group">
-            <label htmlFor="newItemInput"> Add New Item</label>
-            <input
-              type="text"
-              placeholder="add exercise"
-              className="form-control"
-              id="newItemInput"
-            />
-          </div>
-          <button type="submit" className="btn btn-primary">
-            Add
-          </button>
-        </form>
-        <table className="table">
-          <caption>Gym Exerecises</caption>
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Item</th>
-              <th>action</th>
-            </tr>
-          </thead>
-          <tbody>
-            {gymExercises.map(item => {
-              return (
-                <tr key={item}>
-                  <th scope="row">1</th>
-                  <td>{item}</td>
-                  <td>Button</td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
+        <header>
+          <h1>gym log</h1>
+          <form
+            ref={input => (this.addForm = input)}
+            className="form-inline"
+            onSubmit={e => {
+              this.addExercise(e);
+            }}
+          >
+            <div className="form-group">
+              <label type="sr-only" htmlFor="newItemInput">
+                Add New Item
+              </label>
+              <input
+                ref={input => (this.newExercise = input)}
+                type="text"
+                placeholder="add exercise"
+                className="form-control"
+                id="newItemInput"
+              />
+            </div>
+            <button type="submit" className="btn btn-primary">
+              Add
+            </button>
+          </form>
+        </header>
+        <div className="content">
+          <table className="table">
+            <caption>Gym Exerecises</caption>
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Item</th>
+                <th>action</th>
+              </tr>
+            </thead>
+            <tbody>
+              {gymExercises.map(item => {
+                return (
+                  <tr key={item}>
+                    <th scope="row">1</th>
+                    <td>{item}</td>
+                    <td>Button</td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
       </div>
     );
   }
