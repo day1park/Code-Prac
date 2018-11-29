@@ -7,10 +7,11 @@ const Header = () => {
 };
 
 const Greeting = props => {
+  const { name, age } = props;
   return (
     <p>
-      hello universe! my name is -->> {props.name}
-      !!
+      hello universe! my name is -->> {name}
+      !! you are {age} years old!
     </p>
   );
 };
@@ -22,7 +23,7 @@ class App extends Component {
         <header className="App-header">
           <Header />
           <img src={logo} className="App-logo" alt="logo" />
-          <Greeting name="DJ Khaled" />
+          <Greeting name="DJ Khaled" age={1000} />
         </header>
       </div>
     );
