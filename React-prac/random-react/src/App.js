@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import logo from "./logo.svg";
 import "./App.css";
+import Collapsible from "./collapsible/collapsible";
 
 const Header = () => {
   return <h1 className="title">welcome to random react code</h1>;
@@ -75,8 +76,31 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <img src={logo} className="App-logo" alt="logo" />
         <Greeting name="DJ Khaled" age={1000} />
+        <Collapsible title="overview panel header">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Accusantium modi, nobis delectus esse animi nostrum maiores quisquam
+            tenetur consectetur nam atque ipsum optio perspiciatis, minima
+            commodi incidunt. Ipsa, dolorem possimus?
+          </p>
+        </Collapsible>
+        <Collapsible title="features panel header">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Accusantium modi, nobis delectus esse animi nostrum maiores quisquam
+            tenetur consectetur nam atque ipsum optio perspiciatis, minima
+            commodi incidunt. Ipsa, dolorem possimus?
+          </p>
+        </Collapsible>
+        <Collapsible title="software panel header">
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+            Accusantium modi, nobis delectus esse animi nostrum maiores quisquam
+            tenetur consectetur nam atque ipsum optio perspiciatis, minima
+            commodi incidunt. Ipsa, dolorem possimus?
+          </p>
+        </Collapsible>
         <header>
           <h1>gym log</h1>
           <form
