@@ -32,9 +32,41 @@ class App extends Component {
         <img src={logo} className="App-logo" alt="logo" />
         <Greeting name="DJ Khaled" age={1000} />
         <h1>gym log</h1>
-        {gymExercises.map(item => {
-          return <p key={item}>{item}</p>;
-        })}
+        <form className="form-inline">
+          <div className="form-group">
+            <label htmlFor="newItemInput"> Add New Item</label>
+            <input
+              type="text"
+              placeholder="add exercise"
+              className="form-control"
+              id="newItemInput"
+            />
+          </div>
+          <button type="submit" className="btn btn-primary">
+            Add
+          </button>
+        </form>
+        <table className="table">
+          <caption>Gym Exerecises</caption>
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Item</th>
+              <th>action</th>
+            </tr>
+          </thead>
+          <tbody>
+            {gymExercises.map(item => {
+              return (
+                <tr key={item}>
+                  <th scope="row">1</th>
+                  <td>{item}</td>
+                  <td>Button</td>
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
       </div>
     );
   }
