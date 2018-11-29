@@ -2,20 +2,8 @@ import React, { Component } from "react";
 
 import "./App.css";
 import Collapsible from "./collapsible/collapsible";
-
-const Header = () => {
-  return <h1 className="title">welcome to random react code</h1>;
-};
-
-const Greeting = props => {
-  const { name, age } = props;
-  return (
-    <p>
-      hello universe! my name is -->> {name}
-      !! you are {age} years old!
-    </p>
-  );
-};
+import Greeting from "./greeting/greeting";
+import Header from "./header/header";
 
 class App extends Component {
   constructor(props) {
@@ -76,40 +64,33 @@ class App extends Component {
     return (
       <div className="App">
         <Header />
-        <Greeting name="DJ Khaled" age={1000} />
-        <Collapsible title="overview panel header">
+        <Greeting name="guest" age={9000} />
+        <Collapsible title="Push Exercises">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Accusantium modi, nobis delectus esse animi nostrum maiores quisquam
-            tenetur consectetur nam atque ipsum optio perspiciatis, minima
-            commodi incidunt. Ipsa, dolorem possimus? Lorem ipsum dolor sit amet
-            consectetur adipisicing elit. Enim corrupti eveniet tempora fugiat
-            itaque atque doloremque animi, expedita id sit architecto laborum
-            vitae. Quis facere eos, similique atque vitae perspiciatis natus
-            quos accusantium exercitationem harum eligendi vero architecto
-            reiciendis et aut ab optio provident velit hic numquam. Debitis
-            minima qui eos officiis reiciendis ea, quos fugit velit atque
-            voluptate beatae sit quia natus voluptates fuga id nulla
-            voluptatibus, maiores earum cumque, illo asperiores quod. Quasi,
-            inventore esse asperiores iusto illo dolores quia a saepe neque
-            sequi odio, eius minima, quas corporis? Sapiente ipsum tempora
-            consequuntur fuga est placeat fugiat eveniet.
+            chest and tricep exercises consists of a lot of pushing. Lorem ipsum
+            dolor sit amet consectetur adipisicing elit. Animi, dolorem,
+            nesciunt vel explicabo ullam odio corporis dignissimos, non sint
+            illo doloremque quasi quisquam numquam labore. Eligendi, impedit ea
+            nobis sunt aut nulla nihil dolores odit deserunt sequi. Reiciendis
+            consequatur exercitationem culpa at quis sequi voluptate excepturi
+            maiores qui doloribus laborum eligendi soluta ipsa animi aperiam
+            voluptates consequuntur alias ad, enim, incidunt neque. Facilis
+            asperiores at porro architecto, deleniti non, autem facere quo
+            accusantium unde molestiae quae! Aliquam sit quasi quia dolorem
+            voluptas maxime quidem odio amet soluta animi fugiat magnam porro
+            cumque nemo voluptatibus itaque perspiciatis, architecto modi,
+            reprehenderit praesentium.
           </p>
         </Collapsible>
-        <Collapsible title="features panel header">
-          <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Accusantium modi, nobis delectus esse animi nostrum maiores quisquam
-            tenetur consectetur nam atque ipsum optio perspiciatis, minima
-            commodi incidunt. Ipsa, dolorem possimus?
-          </p>
+        <Collapsible title="Pull Exercises">
+          <p>pull exercises such as most back or bicep exercises.</p>
         </Collapsible>
-        <Collapsible title="software panel header">
+        <Collapsible title="Leg Exercises">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Accusantium modi, nobis delectus esse animi nostrum maiores quisquam
-            tenetur consectetur nam atque ipsum optio perspiciatis, minima
-            commodi incidunt. Ipsa, dolorem possimus?
+            don't skip leg day. Lorem ipsum dolor sit amet, consectetur
+            adipisicing elit. Accusantium modi, nobis delectus esse animi
+            nostrum maiores quisquam tenetur consectetur nam atque ipsum optio
+            perspiciatis, minima commodi incidunt. Ipsa, dolorem possimus?
           </p>
         </Collapsible>
         <header>
