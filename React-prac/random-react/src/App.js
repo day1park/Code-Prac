@@ -121,9 +121,7 @@ class App extends Component {
         </header>
         <div className="content">
           {(message !== "" || gymExercises.length === 0) && (
-            <p className="message text-danger">
-              <h1>{message}</h1>
-            </p>
+            <h1 className="message text-danger">{message}</h1>
           )}
           {gymExercises.length > 0 && (
             <table className="table">
@@ -157,7 +155,7 @@ class App extends Component {
               <tfoot>
                 <tr>
                   <td colSpan="2">&nbsp;</td>
-                  <td className="text-right">
+                  <td className="text-center">
                     <button
                       onClick={e => this.removeAllExercises()}
                       className="btn btn-success btn-sm"
