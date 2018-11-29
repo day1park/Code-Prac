@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import logo from "./logo.svg";
+
 import "./App.css";
 import Collapsible from "./collapsible/collapsible";
 
@@ -82,7 +82,18 @@ class App extends Component {
             Lorem ipsum dolor sit amet, consectetur adipisicing elit.
             Accusantium modi, nobis delectus esse animi nostrum maiores quisquam
             tenetur consectetur nam atque ipsum optio perspiciatis, minima
-            commodi incidunt. Ipsa, dolorem possimus?
+            commodi incidunt. Ipsa, dolorem possimus? Lorem ipsum dolor sit amet
+            consectetur adipisicing elit. Enim corrupti eveniet tempora fugiat
+            itaque atque doloremque animi, expedita id sit architecto laborum
+            vitae. Quis facere eos, similique atque vitae perspiciatis natus
+            quos accusantium exercitationem harum eligendi vero architecto
+            reiciendis et aut ab optio provident velit hic numquam. Debitis
+            minima qui eos officiis reiciendis ea, quos fugit velit atque
+            voluptate beatae sit quia natus voluptates fuga id nulla
+            voluptatibus, maiores earum cumque, illo asperiores quod. Quasi,
+            inventore esse asperiores iusto illo dolores quia a saepe neque
+            sequi odio, eius minima, quas corporis? Sapiente ipsum tempora
+            consequuntur fuga est placeat fugiat eveniet.
           </p>
         </Collapsible>
         <Collapsible title="features panel header">

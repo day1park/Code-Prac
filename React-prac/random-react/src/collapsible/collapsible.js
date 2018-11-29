@@ -12,13 +12,17 @@ class Collapsible extends Component {
 
   handleToggle(e) {
     e.preventDefault();
+    // console.log(this.refs.inner.clientHeight);
     this.setState({
-      isExpanded: !this.state.isExpanded
+      isExpanded: !this.state.isExpanded,
+      height: this.refs.inner.clientHeight
     });
   }
   render() {
     const { title, children } = this.props;
-    const { isExpanded } = this.state;
+    const { isExpanded, height } = this.state;
+    const currentHeight = isExpanded ? height : 0;
+
     return (
       <div
         className={`panel ${isExpanded ? "is-expanded" : ""} `}
@@ -27,15 +31,20 @@ class Collapsible extends Component {
         <div className="panel-heading">
           <h2>{title}</h2>
         </div>
-        <div className="panel-collapse">
-          <div className="panel-body">{children}</div>
+        <div
+          className="panel-collapse"
+          style={{ height: currentHeight + "px" }}
+        >
+          <div className="panel-body" ref="inner">
+            {children}
+          </div>
         </div>
       </div>
     );
   }
 }
 
-Collapsible.PropTypes = {
+Collapsible.propTypes = {
   title: PropTypes.string
 };
 
