@@ -30,16 +30,35 @@ class App extends Component {
     e.preventDefault();
     const { gymExercises } = this.state;
     const newExercise = this.newExercise.value;
-    newExercise !== "" &&
+    const isListed = gymExercises.includes(newExercise);
+
+    if (isListed) {
       this.setState({
-        gymExercises: [...gymExercises, newExercise]
+        message: "this exercise already exists!"
       });
+    } else {
+      newExercise !== "" &&
+        this.setState({
+          gymExercises: [...gymExercises, newExercise],
+          message: ""
+        });
+    }
 
     this.addForm.reset();
   }
 
+  removeExercise(exercise) {
+    // console.log("remove" + exercise);
+    const newGymExercises = this.state.gymExercises.filter(gymExercise => {
+      return gymExercise !== exercise;
+    });
+    this.setState({
+      gymExercises: [...newGymExercises]
+    });
+  }
+
   render() {
-    const { gymExercises } = this.state;
+    const { gymExercises, message } = this.state;
     return (
       <div className="App">
         <Header />
@@ -55,15 +74,15 @@ class App extends Component {
             }}
           >
             <div className="form-group">
-              <label type="sr-only" htmlFor="newItemInput">
-                Add New Item
+              <label type="sr-only" htmlFor="newExerciseInput">
+                Add New Exercise
               </label>
               <input
                 ref={input => (this.newExercise = input)}
                 type="text"
                 placeholder="add exercise"
                 className="form-control"
-                id="newItemInput"
+                id="newExerciseInput"
               />
             </div>
             <button type="submit" className="btn btn-primary">
@@ -72,22 +91,31 @@ class App extends Component {
           </form>
         </header>
         <div className="content">
+          {message !== "" && <p className="message text-danger">{message}</p>}
           <table className="table">
             <caption>Gym Exerecises</caption>
             <thead>
               <tr>
                 <th>#</th>
-                <th>Item</th>
+                <th>Exercise</th>
                 <th>action</th>
               </tr>
             </thead>
             <tbody>
-              {gymExercises.map(item => {
+              {gymExercises.map(exercise => {
                 return (
-                  <tr key={item}>
+                  <tr key={exercise}>
                     <th scope="row">1</th>
-                    <td>{item}</td>
-                    <td>Button</td>
+                    <td>{exercise}</td>
+                    <td className="text-right">
+                      <button
+                        onClick={e => this.removeExercise(exercise)}
+                        type="button"
+                        className="btn btn-danger btn-sm"
+                      >
+                        Remove
+                      </button>
+                    </td>
                   </tr>
                 );
               })}
