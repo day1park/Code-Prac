@@ -10,25 +10,30 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: []
+      currentLease: []
     };
   }
 
   componentDidMount() {
+    this.fetchData();
+  }
+
+  fetchData() {
     fetch(API)
       .then(response => response.json())
-      .then(l => {
-        this.setState({ data: l });
-      });
+      .then(parsedJSON => {
+        this.setState({ currentLease: parsedJSON });
+      })
+      .catch(error => console.log("parsing failed"));
   }
-  render() {
-    console.log(this.state.data);
 
+  render() {
+    const { currentLease } = this.state;
     return (
       <div>
         <Header />
         <Search />
-        <Table lease={this.state.data} />
+        <Table lease={currentLease} />
       </div>
     );
   }

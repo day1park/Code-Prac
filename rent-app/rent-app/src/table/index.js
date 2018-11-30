@@ -1,22 +1,26 @@
 import React from "react";
-import Row from "./row";
+// import Row from "./row";
 
 const Table = ({ lease }) => {
-  // if lease id is selected display lease info
-  // let leaseInfo;
-  // leaseInfo = lease.map(lease => {
-  //   return <Row key={lease.id} lease={lease} />;
-  // });
-  console.log(lease);
-  // lease.map(l => console.log(l));
+  const { start_date, end_date, frequency, rent } = lease;
   return (
     <table className="Table">
       <thead>
         <tr>
-          <th>{}</th>
+          <th>From</th>
+          <th>To</th>
+          <th>Days</th>
+          <th>Amount</th>
         </tr>
       </thead>
-      {/* <tbody>{leaseInfo}</tbody> */}
+      <tbody>
+        <tr>
+          <td>{start_date}</td>
+          <td>{end_date}</td>
+          <td>{frequency}</td>
+          <td>{rent}</td>
+        </tr>
+      </tbody>
     </table>
   );
 };
