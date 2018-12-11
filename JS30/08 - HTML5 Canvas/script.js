@@ -14,23 +14,35 @@ let lastX = 0;
 let lastY = 0;
 
 function draw(e) {
-  if (!isDrawing) return; // stops the function from running when not moused down
+  if (!isDrawing) return;
   console.log(e);
   ctx.beginPath();
-  //start from
+  // start from
   ctx.moveTo(lastX, lastY);
   // go to
   ctx.lineTo(e.offsetX, e.offsetY);
-  ctx.strokeStyle();
-  [lastX, lastY] = [e.offsetX, e.offsetY];
-  //   lastX = e.offsetX;
-  //   lastY = e.offsetY;
+  ctx.stroke();
 }
-canvas.addEventListener("mousedown", () => {
-  isDrawing = true;
-  [lastX, lastY] = [e.offsetX, e.offsetY];
-});
+
+// function draw(e) {
+//   if (!isDrawing) return; // stops the function from running when not moused down
+//   console.log(e);
+//   ctx.beginPath();
+//   //start from
+//   ctx.moveTo(lastX, lastY);
+//   // go to
+//   ctx.lineTo(e.offsetX, e.offsetY);
+//   ctx.strokeStyle();
+//   [lastX, lastY] = [e.offsetX, e.offsetY];
+//   //   lastX = e.offsetX;
+//   //   lastY = e.offsetY;
+// }
+// canvas.addEventListener("mousedown", () => {
+//   isDrawing = true;
+//   [lastX, lastY] = [e.offsetX, e.offsetY];
+// });
 
 canvas.addEventListener("mousemove", draw);
+canvas.addEventListener("mousedown", () => (isDrawing = true));
 canvas.addEventListener("mouseup", () => (isDrawing = false));
 canvas.addEventListener("mouseout", () => (isDrawing = false));
