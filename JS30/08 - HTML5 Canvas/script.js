@@ -5,11 +5,11 @@ const ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-ctx.strokeStyle = "blue";
+ctx.strokeStyle = "#BADA55";
 ctx.lineJoin = "round";
 ctx.lineCap = "round";
 ctx.lineWidth = 100;
-ctx.globalCompositeOperation = "multiply";
+// ctx.globalCompositeOperation = "multiply";
 
 let isDrawing = false;
 let lastX = 0;
