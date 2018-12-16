@@ -2,24 +2,46 @@ import React, { Component } from "react";
 import "./App.css";
 import Header from "./header";
 import Table from "./table";
-import Search from "./search/search";
+// import Search from "./search/search";
 
-const API = "https://hiring-task-api.herokuapp.com/v1/leases/:id";
+let API = "https://hiring-task-api.herokuapp.com/v1/leases/";
+let input;
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentLease: []
+      currentLease: [],
+      currentId: ""
     };
   }
+
+  // updateIdSearch(e) {
+  //   // console.log(e.target.value);
+  //   e.preventDefault();
+  //   this.setState({
+  //     idSearch: e.target.value
+  //   });
+  // }
 
   componentDidMount() {
     this.fetchData();
   }
 
+  setup() {
+    let button = "#submit";
+    button.mousePressed("#idSearch");
+    input = "#idSearch";
+  }
+
+  idSearch() {
+    this.setState({
+      currentId: API + input.value()
+    });
+  }
+
   fetchData() {
-    fetch(API)
+    fetch(this.state.currentId)
       .then(response => response.json())
       .then(parsedJSON => {
         this.setState({ currentLease: parsedJSON });
@@ -28,11 +50,14 @@ class App extends Component {
   }
 
   render() {
-    const { currentLease } = this.state;
+    const { currentLease, idSearch } = this.state;
     return (
       <div>
         <Header />
-        <Search />
+        {/* <Search /> */}
+        <label>ID:</label>
+        <input id="idSearch" placeholder=":id" value=":id" />
+        <button id="submit">submit</button>
         <Table lease={currentLease} />
       </div>
     );
