@@ -54,6 +54,44 @@
           </tr>
         </tbody>
       </table>
+
+      <!-- data list tag for options example -->
+
+      <form action="/action_page.php" method="get">
+        <input list="browsers" name="browser" />
+        <datalist id="browsers">
+          <option value="Internet Explorer"> </option>
+          <option value="Firefox"> </option>
+          <option value="Chrome"> </option>
+          <option value="Opera"> </option>
+          <option value="Safari"> </option>
+        </datalist>
+
+        <input type="submit" />
+      </form>
+
+      <!-- form example with input types range and number also datalist tag -->
+      <form>
+        Formula: <input name="formula" autocomplete="on" list="options" />
+        <datalist id="options">
+          <option value="sin"> </option>
+          <option value="cos"> </option>
+          <option value="tan"> </option>
+          <option value="cot"> </option>
+        </datalist>
+
+        <br />
+        Iterations:
+        <input name="iterations" type="range" min="1" max="10" /><br />
+        Precision:
+        <input
+          name="precision"
+          type="number"
+          min="1"
+          max="100"
+          value="50"
+        /><br />
+      </form>
     </main>
   </body>
 </html>
