@@ -1,0 +1,8 @@
+.avatar {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: solid 2px gray;
+}
+
+/* cirlcular image uses border radius 50% */
