@@ -6,3 +6,16 @@
 }
 
 /* cirlcular image uses border radius 50% */
+
+/* a tag style change example */
+a {
+  text-transform: uppercase;
+  cursor: help;
+  text-decoration: none;
+}
+a:before {
+  content: ">";
+}
+a:after {
+  content: "<";
+}
