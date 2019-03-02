@@ -6,7 +6,7 @@ window.addEventListener("keyup", e => {
   pressed.push(e.key);
   pressed.splice(-secretCode.length - 1, pressed.length - secretCode.length);
   if (pressed.join("").includes(secretCode)) {
-    alert("PASSWORD CONFIRMED! UNLOCKING CORNIFY RAINBOW SEQUENCE!").;
+    alert("PASSWORD CONFIRMED! UNLOCKING CORNIFY RAINBOW OR UNICORN SEQUENCE!");
     cornify_add();
   }
   console.log(pressed);
