@@ -12,6 +12,13 @@ class Example extends React.Component {
     }
   }
 
+  // component will only update if the new input is different from the previous
+  shouldComponentUpdate(nextProps, nextState) {
+    if (this.state.input == nextState.input) {
+      return false;
+    }
+  }
+
   render() {
     return <h1>{this.state.number}</h1>;
   }
