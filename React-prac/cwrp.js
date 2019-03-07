@@ -32,6 +32,11 @@ class Example extends React.Component {
     }
   }
 
+  // This is where you can perform any cleanups that should be done such as invalidating timers, canceling network requests, removing event listeners or canceling any subscriptions made in componentDidMount.
+  componentWillUnmount() {
+    document.removeEventListener("click", SomeFunction);
+  }
+
   render() {
     return <h1>{this.state.number}</h1>;
   }
