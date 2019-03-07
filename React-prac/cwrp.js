@@ -14,8 +14,21 @@ class Example extends React.Component {
 
   // component will only update if the new input is different from the previous
   shouldComponentUpdate(nextProps, nextState) {
+    // improve the performance of a component because it can help to prevent unnecessary re-rendering.
     if (this.state.input == nextState.input) {
       return false;
+    }
+  }
+
+  componentWillUpdate(nextProps, nextState) {
+    // Do something here
+  }
+
+  //should be done as long as you compare the current props to the previous props to avoid unnecessary network requests.
+  componentDidUpdate(prevProps, prevState) {
+    if (this.props.input == prevProps.input) {
+      // make ajax calls
+      // Perform any other function
     }
   }
 
