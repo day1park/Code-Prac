@@ -10,6 +10,17 @@
         heading.appendChild(heading_text);
         document.body.appendChild(heading);
       };
+
+      // reference to a table object, as in the following example, you routinely use all three of these interfaces interchangeably on the object, perhaps without knowing it.
+      var table = document.getElementById("table");
+      var tableAttrs = table.attributes; // Node/Element interface
+      for (var i = 0; i < tableAttrs.length; i++) {
+        // HTMLTableElement interface: border attribute
+        if (tableAttrs[i].nodeName.toLowerCase() == "border")
+          table.border = "1";
+      }
+      // HTMLTableElement interface: summary attribute
+      table.summary = "note: increased border";
     </script>
   </head>
   <body></body>
