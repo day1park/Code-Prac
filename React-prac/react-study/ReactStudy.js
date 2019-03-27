@@ -34,3 +34,5 @@ class SomeQuote extends React.Component {
 }
 
 ReactDOM.render(<SomeQuote />, document.getElementById("app"));
+
+// A render() function can also be a fine place to put simple calculations that need to happen right before a component renders.
