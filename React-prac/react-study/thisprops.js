@@ -24,3 +24,14 @@ class PropsDisplayer extends React.Component {
 ReactDOM.render(<PropsDisplayer />, document.getElementById("app"));
 
 // Despite what you see in the browser, <PropsDisplayer />‘s props object isn’t really empty. It has some properties that JSON.stringify doesn’t detect. But even if you could see those properties, the props object still wouldn’t have much of value to show you right now.
+
+
+// You can pass information to a React component. By giving that component an attribute
+
+<MyComponent foo="bar" />
+
+<Example message="This is some top secret info." />
+
+<Greeting myInfo={["top", "secret", "lol"]} />
+
+<Greeting name="Frarthur" town="Flundon" age={2} haunted={false} />
