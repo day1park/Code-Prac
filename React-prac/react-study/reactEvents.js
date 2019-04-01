@@ -177,12 +177,18 @@ class Toggle extends React.Component {
   }
 }
 
+// screen’s color doesn’t change until Toggle renders.
+
+// Inside of the render function, it’s this line:
+
+// <div style={{background:this.state.color}}></div>
+
 ReactDOM.render(<Toggle />, document.getElementById('app'))
 
 
-you can use this.setState to change single, multiple, or even all properties of state at a time. When setting state for multiple properties, only the properties passed in will be updated.
+// you can use this.setState to change single, multiple, or even all properties of state at a time. When setting state for multiple properties, only the properties passed in will be updated.
 
-For example, the following shows how the properties key1 and key3 of a state could be updated.
+// For example, the following shows how the properties key1 and key3 of a state could be updated.
 
 /* Given this state */
 this.state = {
@@ -193,3 +199,8 @@ this.state = {
 
 /* We could use code like the following to update specific properties */
 this.setState({ key1: newValue1, key3: newValue3 });
+
+
+
+
+// Any time that you call this.setState(), this.setState() AUTOMATICALLY calls .render() as soon as the state has changed.
