@@ -55,3 +55,6 @@ export class Child extends React.Component {
     return <h1>Hey, my name is {this.props.name}!</h1>;
   }
 }
+
+// !!!!! Don't Update props
+// A component should never update this.props!
