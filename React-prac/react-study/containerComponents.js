@@ -54,6 +54,13 @@ class GuineaPigsContainer extends React.Component {
 
 ReactDOM.render(<GuineaPigsContainer />, document.getElementById("app"));
 
+// A container does data fetching and then renders its corresponding sub-component. That’s it.
+// Corresponding” meaning a component that shares the same name:
+
+StockWidgetContainer => StockWidget;
+TagCloudContainer => TagCloud;
+PartyPooperListContainer => PartyPooperList;
+
 // PRESENTATIONAL COMPONENT EXAMPLE
 import React from "react";
 
@@ -68,3 +75,32 @@ export class GuineaPigs extends React.Component {
     );
   }
 }
+
+//First, lets pull out data-fetching into a container component.
+
+class CommentListContainer extends React.Component {
+  state = { comments: [] };
+  componentDidMount() {
+    fetchSomeComments(comments => this.setState({ comments: comments }));
+  }
+  render() {
+    return <CommentList comments={this.state.comments} />;
+  }
+}
+//Now, let’s rework CommentList to take comments as a prop.
+
+const CommentList = props => (
+  <ul>
+    {props.comments.map(c => (
+      <li>
+        {c.body}—{c.author}
+      </li>
+    ))}
+  </ul>
+);
+
+// We’ve separated our data-fetching and rendering concerns.
+
+// We’ve made our CommentList component reusable.
+
+// We’ve given CommentList the ability to set PropTypes and fail loudly.
