@@ -76,6 +76,21 @@ export class GuineaPigs extends React.Component {
   }
 }
 
+
+// SAME AS ABOVE PRESENTATIONAL COMPONENT EXAMPLE but stateless functional way
+
+import React from 'react';
+
+export const GuineaPigs = (props) => {
+  let src = props.src;
+  return (
+  	<div>
+        <h1>Cute Guinea Pigs</h1>
+        <img src={src} />
+    </div>
+  )
+}
+
 //First, lets pull out data-fetching into a container component.
 
 class CommentListContainer extends React.Component {
@@ -104,3 +119,30 @@ const CommentList = props => (
 // We’ve made our CommentList component reusable.
 
 // We’ve given CommentList the ability to set PropTypes and fail loudly.
+
+// When you separate a container component from a presentational component, the presentational component will always end up like this: one render() function, and no other properties.
+
+// If you have a component class with nothing but a render function, then you can rewrite that component class in a very different way. Instead of using React.Component, you can write it as a JavaScript function!
+
+// A component class written as a function is called a stateless functional component. Stateless functional components have some advantages over typical component classes
+
+
+// A component class written in the usual way:
+export class MyComponentClass extends React.Component {
+  render() {
+    return <h1>Hello world</h1>;
+  }
+}
+
+// The same component class, written as a stateless functional component:
+export const MyComponentClass = () => {
+  return <h1>Hello world</h1>;
+}
+
+// Works the same either way:
+ReactDOM.render(
+	<MyComponentClass />,
+	document.getElementById('app')
+);
+
+
