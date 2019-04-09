@@ -52,3 +52,5 @@ let typedText = input.value; // input.value will be equal to whatever text is cu
 // A controlled component has its state controlled from outside. Because of this, controlled components are usually stateless as they do not store their own state and receive it from a parent component.
 
 // Uncontrolled components are essentially stateful, as they store and maintain their own internal state.
+
+// HTML form elements work a little bit differently from other DOM elements in React, because form elements naturally keep some internal state.
